@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hbk_blanket_app_design/App/Router/route.dart';
+import 'package:hbk_blanket_app_design/Presentation/AppStrings/varification_code_screen_strings.dart';
 
 import 'package:hbk_blanket_app_design/Presentation/Common/AssetsPath/assets_path.dart';
+import 'package:hbk_blanket_app_design/Presentation/Common/Utils/colors.dart';
 
 class VarificationCode extends StatelessWidget {
   const VarificationCode({super.key});
@@ -31,7 +33,7 @@ class VarificationCode extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Almost there',
+                      VarificationCodeScreenStrings.almostThere,
                       textAlign: TextAlign.start,
                       style: TextStyle(
                         fontSize: 19.sp,
@@ -42,7 +44,7 @@ class VarificationCode extends StatelessWidget {
                       height: 15.h,
                     ),
                     Text(
-                      'Verification code sent to example@gmail.com, input code to verify your account',
+                      VarificationCodeScreenStrings.varificationCodeSent,
                       style: TextStyle(
                         fontSize: 16.spMin,
                         fontWeight: FontWeight.w500,
@@ -177,13 +179,20 @@ class VarificationCode extends StatelessWidget {
                   Navigator.of(context).pushNamed(AppRouter.createPassword);
                 },
                 style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.r)))),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40.r),
+                    ),
+                  ),
+                  backgroundColor: const MaterialStatePropertyAll(
+                    AppColors.blueColor,
+                  ),
+                ),
                 child: Padding(
                   padding:
                       EdgeInsets.symmetric(vertical: 19.h, horizontal: 100.w),
                   child: Text(
-                    'Varify',
+                    VarificationCodeScreenStrings.varify,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,

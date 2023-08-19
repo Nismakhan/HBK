@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hbk_blanket_app_design/Auth/Widgets/create_password_widgets.dart';
 import 'package:hbk_blanket_app_design/Presentation/AppStrings/create_password_strings.dart';
 import 'package:hbk_blanket_app_design/Presentation/Common/AssetsPath/assets_path.dart';
+import 'package:hbk_blanket_app_design/Presentation/Common/Utils/colors.dart';
 
 class CreatePassword extends StatelessWidget {
   const CreatePassword({super.key});
@@ -39,8 +40,15 @@ class CreatePassword extends StatelessWidget {
                       });
                 },
                 style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.r)))),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40.r),
+                    ),
+                  ),
+                  backgroundColor: const MaterialStatePropertyAll(
+                    AppColors.blueColor,
+                  ),
+                ),
                 child: Padding(
                   padding:
                       EdgeInsets.symmetric(vertical: 19.h, horizontal: 80.w),

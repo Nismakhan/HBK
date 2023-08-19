@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hbk_blanket_app_design/App/Router/route.dart';
 import 'package:hbk_blanket_app_design/Auth/Widgets/reset_password_widgets.dart';
 import 'package:hbk_blanket_app_design/Presentation/AppStrings/reset_password_screen_strings.dart';
+import 'package:hbk_blanket_app_design/Presentation/Common/Utils/colors.dart';
 import '../../Presentation/Common/AssetsPath/assets_path.dart';
 
 class ResetPassword extends StatelessWidget {
@@ -35,8 +36,14 @@ class ResetPassword extends StatelessWidget {
                   Navigator.of(context).pushNamed(AppRouter.varificationCode);
                 },
                 style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.r)))),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40.r),
+                    ),
+                  ),
+                  backgroundColor:
+                      const MaterialStatePropertyAll(AppColors.blueColor),
+                ),
                 child: Padding(
                   padding:
                       EdgeInsets.symmetric(vertical: 19.h, horizontal: 100.w),

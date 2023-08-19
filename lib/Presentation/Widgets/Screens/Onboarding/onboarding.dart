@@ -148,6 +148,8 @@ class _OnboardingState extends State<Onboarding> {
                           borderRadius: BorderRadius.circular(40.r),
                         ),
                       ),
+                      backgroundColor:
+                          const MaterialStatePropertyAll(AppColors.blueColor),
                     ),
                     child: Padding(
                       padding: EdgeInsets.symmetric(
