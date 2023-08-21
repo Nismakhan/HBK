@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hbk_blanket_app_design/App/Router/route.dart';
-import 'package:hbk_blanket_app_design/Presentation/AppStrings/onboarding_screen_strings.dart';
-import 'package:hbk_blanket_app_design/Presentation/Common/AssetsPath/assets_path.dart';
+import 'package:hbk_blanket_app_design/Application/NavigationServices/Router/route.dart';
+import 'package:hbk_blanket_app_design/Data/DataSource/AppStrings/onboarding_screen_strings.dart';
+
+import 'package:hbk_blanket_app_design/Data/DataSource/Utils/media_query.dart';
 import 'package:hbk_blanket_app_design/Presentation/Common/Utils/colors.dart';
-import 'package:hbk_blanket_app_design/Presentation/Common/Utils/media_query.dart';
 import 'package:hbk_blanket_app_design/Presentation/Widgets/Screens/Onboarding/OnBoardingWidgets/onboarding_line_row_for_next_screen_showing.dart';
+
+import '../../../Common/AssetsPath/assets_path.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -33,12 +35,19 @@ class _OnboardingState extends State<Onboarding> {
     OnBoardingScreenStrings.experience,
     OnBoardingScreenStrings.secureAndFast,
   ];
+  final List<Widget> nextScreenShowingLines = [
+    const OnboardingLineRowForNextScreenShowing1(),
+    const OnboardingLineRowForNextScreenShowing3(),
+    const OnboardingLineRowForNextScreenShowing2(),
+  ];
 
   void nextPage() {
     currentPageIndex.value = (currentPageIndex.value + 1) % imagePaths.length;
     currentPageIndex.value = (currentPageIndex.value + 1) % headingsPath.length;
     currentPageIndex.value = (currentPageIndex.value + 1) % headingsPath.length;
     currentPageIndex.value = (currentPageIndex.value + 1) % subText.length;
+    currentPageIndex.value =
+        (currentPageIndex.value + 1) % nextScreenShowingLines.length;
   }
 
   @override
@@ -122,7 +131,12 @@ class _OnboardingState extends State<Onboarding> {
                           ),
                         ),
                         SizedBox(height: 30.h),
-                        const OnboardingLineRowForNextScreenShowing(),
+                        ValueListenableBuilder(
+                          valueListenable: currentPageIndex,
+                          builder: (context, value, child) {
+                            return nextScreenShowingLines[value];
+                          },
+                        ),
                       ],
                     ),
                   ),
@@ -132,15 +146,15 @@ class _OnboardingState extends State<Onboarding> {
                   ElevatedButton(
                     onPressed: () {
                       nextPage();
+                      // log(currentPageIndex.value);
+                      // int nextIndex = currentPageIndex.value + 1;
 
-                      int nextIndex = currentPageIndex.value + 1;
-
-                      if (nextIndex < imagePaths.length) {
-                        currentPageIndex.value = nextIndex;
-                      } else {
-                        Navigator.of(context)
-                            .pushReplacementNamed(AppRouter.login);
-                      }
+                      // if (nextIndex < imagePaths.length) {
+                      //   currentPageIndex.value = nextIndex;
+                      // } else {
+                      //   Navigator.of(context)
+                      //       .pushReplacementNamed(AppRouter.login);
+                      // }
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(

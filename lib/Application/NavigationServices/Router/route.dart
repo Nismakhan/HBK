@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hbk_blanket_app_design/Auth/Screens/create_password.dart';
-import 'package:hbk_blanket_app_design/Auth/Screens/reset_password.dart';
-import 'package:hbk_blanket_app_design/Auth/Screens/sign_up.dart';
-import 'package:hbk_blanket_app_design/Auth/Screens/varification_code.dart';
+import 'package:hbk_blanket_app_design/Presentation/Widgets/Auth/Screens/create_password.dart';
+import 'package:hbk_blanket_app_design/Presentation/Widgets/Auth/Screens/reset_password.dart';
+import 'package:hbk_blanket_app_design/Presentation/Widgets/Auth/Screens/sign_up.dart';
+import 'package:hbk_blanket_app_design/Presentation/Widgets/Auth/Screens/varification_code.dart';
 import 'package:hbk_blanket_app_design/Presentation/Widgets/Screens/Onboarding/onboarding.dart';
 import 'package:hbk_blanket_app_design/Presentation/Widgets/Screens/Splash/splash.dart';
 
-import '../../Auth/Screens/login.dart';
+import '../../../Presentation/Widgets/Auth/Screens/login.dart';
 
 class AppRouter {
   static const String splash = "/";

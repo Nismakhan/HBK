@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hbk_blanket_app_design/App/Router/route.dart';
-import 'package:hbk_blanket_app_design/Presentation/AppStrings/varification_code_screen_strings.dart';
-
+import 'package:hbk_blanket_app_design/Application/NavigationServices/Router/route.dart';
+import 'package:hbk_blanket_app_design/Data/DataSource/AppStrings/varification_code_screen_strings.dart';
 import 'package:hbk_blanket_app_design/Presentation/Common/AssetsPath/assets_path.dart';
+
 import 'package:hbk_blanket_app_design/Presentation/Common/Utils/colors.dart';
 
 class VarificationCode extends StatelessWidget {

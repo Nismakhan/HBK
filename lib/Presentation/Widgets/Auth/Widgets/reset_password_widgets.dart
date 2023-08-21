@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hbk_blanket_app_design/Presentation/Common/Utils/colors.dart';
 
-import '../../Presentation/AppStrings/reset_password_screen_strings.dart';
+import '../../../../Data/DataSource/AppStrings/reset_password_screen_strings.dart';
 
 class TextFieldForResetPasswordScreen extends StatelessWidget {
   const TextFieldForResetPasswordScreen({

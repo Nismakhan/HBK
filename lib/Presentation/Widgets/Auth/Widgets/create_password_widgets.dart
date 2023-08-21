@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hbk_blanket_app_design/Presentation/AppStrings/create_password_strings.dart';
+import 'package:hbk_blanket_app_design/Data/DataSource/AppStrings/create_password_strings.dart';
+
 import 'package:hbk_blanket_app_design/Presentation/Common/AssetsPath/assets_path.dart';
 import 'package:hbk_blanket_app_design/Presentation/Common/Utils/colors.dart';
 
