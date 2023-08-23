@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hbk_blanket_app_design/Data/DataSource/AppStrings/create_password_strings.dart';
-
-import 'package:hbk_blanket_app_design/Presentation/Common/AssetsPath/assets_path.dart';
-import 'package:hbk_blanket_app_design/Presentation/Common/Utils/colors.dart';
+import 'package:hbk_blanket_app_design/Data/DataSource/AssetsPath/assets_path.dart';
+import 'package:hbk_blanket_app_design/Data/DataSource/Utils/colors.dart';
 
 class TextFieldsForCreatePassword extends StatelessWidget {
   const TextFieldsForCreatePassword({
@@ -56,17 +55,19 @@ class TextFieldsForCreatePassword extends StatelessWidget {
                 )
               ],
             ),
-            child: TextFormField(
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  prefixIcon: const Icon(Icons.lock),
-                  prefixIconColor: AppColors.lightGreyColor,
-                  hintText: CreatePasswordScreenStrings.newPasswordHint,
-                  hintStyle: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.lightGreyColor,
-                  )),
+            child: Center(
+              child: TextFormField(
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: const Icon(Icons.lock),
+                    prefixIconColor: AppColors.lightGreyColor,
+                    hintText: CreatePasswordScreenStrings.newPasswordHint,
+                    hintStyle: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.lightGreyColor,
+                    )),
+              ),
             ),
           ),
           SizedBox(
@@ -90,17 +91,19 @@ class TextFieldsForCreatePassword extends StatelessWidget {
                 )
               ],
             ),
-            child: TextFormField(
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  prefixIcon: const Icon(Icons.lock),
-                  prefixIconColor: AppColors.lightGreyColor,
-                  hintText: CreatePasswordScreenStrings.confirmPasswordHint,
-                  hintStyle: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.lightGreyColor,
-                  )),
+            child: Center(
+              child: TextFormField(
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: const Icon(Icons.lock),
+                    prefixIconColor: AppColors.lightGreyColor,
+                    hintText: CreatePasswordScreenStrings.confirmPasswordHint,
+                    hintStyle: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.lightGreyColor,
+                    )),
+              ),
             ),
           ),
         ],
@@ -123,7 +126,11 @@ class DialogBox extends StatelessWidget {
         height: 259.h,
         width: 380.w,
         // color: Colors.red,
-        child: SizedBox(width: 150, child: Image.asset(AssetsPaths.lock)),
+        child: SizedBox(
+            width: 150,
+            child: Image.asset(
+              AssetsPaths.lock,
+            )),
       ),
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:hbk_blanket_app_design/Presentation/Common/Utils/colors.dart';
+import 'package:hbk_blanket_app_design/Data/DataSource/Utils/colors.dart';
 
 class OnboardingLineRowForNextScreenShowing1 extends StatelessWidget {
   const OnboardingLineRowForNextScreenShowing1({

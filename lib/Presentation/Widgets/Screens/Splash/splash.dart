@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hbk_blanket_app_design/Application/NavigationServices/Router/route.dart';
-
-import 'package:hbk_blanket_app_design/Presentation/Common/AssetsPath/assets_path.dart';
-import 'package:hbk_blanket_app_design/Presentation/Common/Utils/colors.dart';
+import 'package:hbk_blanket_app_design/Data/DataSource/AssetsPath/assets_path.dart';
+import 'package:hbk_blanket_app_design/Data/DataSource/Utils/colors.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});

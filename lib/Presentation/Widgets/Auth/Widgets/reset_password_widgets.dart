@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hbk_blanket_app_design/Presentation/Common/Utils/colors.dart';
+import 'package:hbk_blanket_app_design/Data/DataSource/Utils/colors.dart';
 
 import '../../../../Data/DataSource/AppStrings/reset_password_screen_strings.dart';
 
@@ -55,17 +55,19 @@ class TextFieldForResetPasswordScreen extends StatelessWidget {
                 )
               ],
             ),
-            child: TextFormField(
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  prefixIcon: const Icon(Icons.email),
-                  prefixIconColor: AppColors.blueColor,
-                  hintText: ResetPasswordScreenStrings.exampleHint,
-                  hintStyle: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.blueColor,
-                  )),
+            child: Center(
+              child: TextFormField(
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: const Icon(Icons.email),
+                    prefixIconColor: AppColors.blueColor,
+                    hintText: ResetPasswordScreenStrings.exampleHint,
+                    hintStyle: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.blueColor,
+                    )),
+              ),
             ),
           ),
         ],
