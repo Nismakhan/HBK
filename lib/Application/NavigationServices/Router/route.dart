@@ -3,6 +3,7 @@ import 'package:hbk_blanket_app_design/Presentation/Widgets/Auth/Screens/create_
 import 'package:hbk_blanket_app_design/Presentation/Widgets/Auth/Screens/reset_password.dart';
 import 'package:hbk_blanket_app_design/Presentation/Widgets/Auth/Screens/sign_up.dart';
 import 'package:hbk_blanket_app_design/Presentation/Widgets/Auth/Screens/varification_code.dart';
+import 'package:hbk_blanket_app_design/Presentation/Widgets/Screens/HomeScreen/home_screen.dart';
 import 'package:hbk_blanket_app_design/Presentation/Widgets/Screens/Onboarding/onboarding.dart';
 import 'package:hbk_blanket_app_design/Presentation/Widgets/Screens/Splash/splash.dart';
 
@@ -16,6 +17,7 @@ class AppRouter {
   static const String resetPassword = "/reset_password";
   static const String varificationCode = "/varification_code";
   static const String createPassword = "/create_password";
+  static const String homeScreen = "homeScreen";
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -46,6 +48,10 @@ class AppRouter {
       case createPassword:
         return MaterialPageRoute(
           builder: ((context) => const CreatePassword()),
+        );
+      case homeScreen:
+        return MaterialPageRoute(
+          builder: ((context) => HomeScreen()),
         );
     }
 

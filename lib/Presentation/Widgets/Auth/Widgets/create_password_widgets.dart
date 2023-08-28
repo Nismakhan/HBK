@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hbk_blanket_app_design/Data/DataSource/AppStrings/create_password_strings.dart';
-import 'package:hbk_blanket_app_design/Data/DataSource/AssetsPath/assets_path.dart';
-import 'package:hbk_blanket_app_design/Data/DataSource/Utils/colors.dart';
+import 'package:hbk_blanket_app_design/Presentation/Common/textfield_decoration.dart';
 
-class TextFieldsForCreatePassword extends StatelessWidget {
+class TextFieldsForCreatePassword extends StatefulWidget {
   const TextFieldsForCreatePassword({
     super.key,
   });
 
+  @override
+  State<TextFieldsForCreatePassword> createState() =>
+      _TextFieldsForCreatePasswordState();
+}
+
+bool _isHidden = true;
+
+class _TextFieldsForCreatePasswordState
+    extends State<TextFieldsForCreatePassword> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -40,33 +48,25 @@ class TextFieldsForCreatePassword extends StatelessWidget {
           Container(
             width: 380.w,
             height: 80.h,
-            clipBehavior: Clip.antiAlias,
-            decoration: ShapeDecoration(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(40.r),
-              ),
-              shadows: [
-                BoxShadow(
-                  color: const Color(0x0F000000),
-                  blurRadius: 12.r,
-                  offset: const Offset(0, 6),
-                  spreadRadius: 0,
-                )
-              ],
-            ),
-            child: Center(
-              child: TextFormField(
-                decoration: InputDecoration(
-                    border: InputBorder.none,
-                    prefixIcon: const Icon(Icons.lock),
-                    prefixIconColor: AppColors.lightGreyColor,
+            decoration: containerShapeDecorationForTextField(),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              child: Align(
+                alignment: Alignment.center,
+                child: TextFormField(
+                  obscureText: _isHidden,
+                  obscuringCharacter: '*',
+                  decoration: inputDecorationForTextField(
+                    prefixIcon: Icons.lock,
                     hintText: CreatePasswordScreenStrings.newPasswordHint,
-                    hintStyle: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.lightGreyColor,
-                    )),
+                    suffixIcon: GestureDetector(
+                      onTap: () => togglePasswordView(),
+                      child: Icon(
+                        _isHidden ? Icons.visibility : Icons.visibility_off,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
           ),
@@ -76,33 +76,25 @@ class TextFieldsForCreatePassword extends StatelessWidget {
           Container(
             width: 380.w,
             height: 80.h,
-            clipBehavior: Clip.antiAlias,
-            decoration: ShapeDecoration(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(40.r),
-              ),
-              shadows: [
-                BoxShadow(
-                  color: const Color(0x0F000000),
-                  blurRadius: 12.r,
-                  offset: const Offset(0, 6),
-                  spreadRadius: 0,
-                )
-              ],
-            ),
-            child: Center(
-              child: TextFormField(
-                decoration: InputDecoration(
-                    border: InputBorder.none,
-                    prefixIcon: const Icon(Icons.lock),
-                    prefixIconColor: AppColors.lightGreyColor,
+            decoration: containerShapeDecorationForTextField(),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              child: Align(
+                alignment: Alignment.center,
+                child: TextFormField(
+                  obscureText: _isHidden,
+                  obscuringCharacter: '*',
+                  decoration: inputDecorationForTextField(
+                    prefixIcon: Icons.lock,
                     hintText: CreatePasswordScreenStrings.confirmPasswordHint,
-                    hintStyle: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.lightGreyColor,
-                    )),
+                    suffixIcon: GestureDetector(
+                      onTap: () => togglePasswordView(),
+                      child: Icon(
+                        _isHidden ? Icons.visibility : Icons.visibility_off,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
           ),
@@ -110,28 +102,10 @@ class TextFieldsForCreatePassword extends StatelessWidget {
       ),
     );
   }
-}
 
-class DialogBox extends StatelessWidget {
-  const DialogBox({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      actionsOverflowAlignment: OverflowBarAlignment.end,
-      content: SizedBox(
-        height: 259.h,
-        width: 380.w,
-        // color: Colors.red,
-        child: SizedBox(
-            width: 150,
-            child: Image.asset(
-              AssetsPaths.lock,
-            )),
-      ),
-    );
+  void togglePasswordView() {
+    setState(() {
+      _isHidden = !_isHidden;
+    });
   }
 }

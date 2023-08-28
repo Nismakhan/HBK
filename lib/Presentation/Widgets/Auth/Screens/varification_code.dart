@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hbk_blanket_app_design/Application/NavigationServices/Router/route.dart';
 import 'package:hbk_blanket_app_design/Data/DataSource/AppStrings/varification_code_screen_strings.dart';
 import 'package:hbk_blanket_app_design/Data/DataSource/AssetsPath/assets_path.dart';
-import 'package:hbk_blanket_app_design/Data/DataSource/Utils/colors.dart';
+import 'package:hbk_blanket_app_design/Presentation/Common/elevated_button_styles.dart';
 
 class VarificationCode extends StatelessWidget {
   const VarificationCode({super.key});
@@ -60,283 +59,145 @@ class VarificationCode extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Card(
-                            elevation: 3,
-                            child: Container(
-                              decoration: ShapeDecoration(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.r),
-                                ),
-                                color: Colors.white,
-                              ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            elevation: 20,
+                            color: Colors.white,
+                            shadowColor:
+                                const Color.fromARGB(255, 214, 214, 214),
+                            child: SizedBox(
                               width: 77.w,
-                              // height: 110.h,
                               height: 80.h,
-                              child: TextField(
-                                onChanged: (value) {
-                                  if (value.length == 1) {
-                                    FocusScope.of(context).nextFocus();
-                                  }
-                                },
-                                // style: Theme.of(context).textTheme.headlineMedium,
-                                decoration: const InputDecoration(
-                                  border: InputBorder.none,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: TextFormField(
+                                  onChanged: (value) {
+                                    if (value.length == 1) {
+                                      FocusScope.of(context).nextFocus();
+                                    }
+                                  },
+                                  decoration: const InputDecoration(
+                                    border: InputBorder.none,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(1),
+                                  ],
                                 ),
-                                textAlign: TextAlign.center,
-                                keyboardType: TextInputType.number,
-                                inputFormatters: [
-                                  LengthLimitingTextInputFormatter(1),
-                                ],
                               ),
                             ),
                           ),
                           Card(
-                            elevation: 3,
-                            child: Container(
-                              decoration: ShapeDecoration(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.r),
-                                ),
-                                color: Colors.white,
-                              ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            elevation: 20,
+                            color: Colors.white,
+                            shadowColor:
+                                const Color.fromARGB(255, 214, 214, 214),
+                            child: SizedBox(
                               width: 77.w,
-                              // height: 110.h,
                               height: 80.h,
-                              child: TextField(
-                                onChanged: (value) {
-                                  if (value.length == 1) {
-                                    FocusScope.of(context).nextFocus();
-                                  }
-                                },
-                                // style: Theme.of(context).textTheme.headlineMedium,
-                                decoration: const InputDecoration(
-                                  border: InputBorder.none,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: TextFormField(
+                                  onChanged: (value) {
+                                    if (value.length == 1) {
+                                      FocusScope.of(context).nextFocus();
+                                    }
+                                  },
+                                  decoration: const InputDecoration(
+                                    border: InputBorder.none,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(1),
+                                  ],
                                 ),
-                                textAlign: TextAlign.center,
-                                keyboardType: TextInputType.number,
-                                inputFormatters: [
-                                  LengthLimitingTextInputFormatter(1),
-                                ],
                               ),
                             ),
                           ),
                           Card(
-                            elevation: 3,
-                            child: Container(
-                              decoration: ShapeDecoration(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.r),
-                                ),
-                                color: Colors.white,
-                              ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            elevation: 20,
+                            color: Colors.white,
+                            shadowColor:
+                                const Color.fromARGB(255, 214, 214, 214),
+                            child: SizedBox(
                               width: 77.w,
-                              // height: 110.h,
                               height: 80.h,
-                              child: TextField(
-                                onChanged: (value) {
-                                  if (value.length == 1) {
-                                    FocusScope.of(context).nextFocus();
-                                  }
-                                },
-                                // style: Theme.of(context).textTheme.headlineMedium,
-                                decoration: const InputDecoration(
-                                  border: InputBorder.none,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: TextFormField(
+                                  onChanged: (value) {
+                                    if (value.length == 1) {
+                                      FocusScope.of(context).nextFocus();
+                                    }
+                                  },
+                                  decoration: const InputDecoration(
+                                    border: InputBorder.none,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(1),
+                                  ],
                                 ),
-                                textAlign: TextAlign.center,
-                                keyboardType: TextInputType.number,
-                                inputFormatters: [
-                                  LengthLimitingTextInputFormatter(1),
-                                ],
                               ),
                             ),
                           ),
                           Card(
-                            elevation: 3,
-                            child: Container(
-                              decoration: ShapeDecoration(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.r),
-                                ),
-                                color: Colors.white,
-                              ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            elevation: 20,
+                            color: Colors.white,
+                            shadowColor:
+                                const Color.fromARGB(255, 214, 214, 214),
+                            child: SizedBox(
                               width: 77.w,
-                              // height: 110.h,
                               height: 80.h,
-                              child: TextField(
-                                onChanged: (value) {
-                                  if (value.length == 1) {
-                                    FocusScope.of(context).nextFocus();
-                                  }
-                                },
-                                // style: Theme.of(context).textTheme.headlineMedium,
-                                decoration: const InputDecoration(
-                                  border: InputBorder.none,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: TextFormField(
+                                  onChanged: (value) {
+                                    if (value.length == 1) {
+                                      FocusScope.of(context).nextFocus();
+                                    }
+                                  },
+                                  decoration: const InputDecoration(
+                                    border: InputBorder.none,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(1),
+                                  ],
                                 ),
-                                textAlign: TextAlign.center,
-                                keyboardType: TextInputType.number,
-                                inputFormatters: [
-                                  LengthLimitingTextInputFormatter(1),
-                                ],
                               ),
                             ),
                           ),
                         ],
                       )
-
-                      // SizedBox(
-                      //   width: 380,
-                      //   height: 76,
-                      //   child: Row(
-                      //     mainAxisSize: MainAxisSize.min,
-                      //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      //     crossAxisAlignment: CrossAxisAlignment.start,
-                      //     children: [
-                      //       Container(
-                      //         width: 77.w,
-                      //         height: 110.h,
-                      //         padding: const EdgeInsets.symmetric(
-                      //             horizontal: 10.50, vertical: 10),
-                      //         clipBehavior: Clip.antiAlias,
-                      //         decoration: ShapeDecoration(
-                      //           color: Colors.white,
-                      //           shape: RoundedRectangleBorder(
-                      //             borderRadius: BorderRadius.circular(10.r),
-                      //           ),
-                      //           shadows: [
-                      //             BoxShadow(
-                      //               color: const Color(0x0F000000),
-                      //               blurRadius: 12.r,
-                      //               offset: const Offset(0, 6),
-                      //               spreadRadius: 0,
-                      //             )
-                      //           ],
-                      //         ),
-                      //         child: Center(
-                      //           child: TextFormField(
-                      //             onEditingComplete: () {},
-                      //             keyboardType: TextInputType.number,
-                      //             maxLength: 1,
-                      //             maxLengthEnforcement:
-                      //                 MaxLengthEnforcement.enforced,
-                      //             decoration: const InputDecoration(
-                      //               border: InputBorder.none,
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       ),
-                      //       Container(
-                      //         width: 77.w,
-                      //         height: 110.h,
-                      //         padding: const EdgeInsets.symmetric(
-                      //             horizontal: 10.50, vertical: 10),
-                      //         clipBehavior: Clip.antiAlias,
-                      //         decoration: ShapeDecoration(
-                      //           color: Colors.white,
-                      //           shape: RoundedRectangleBorder(
-                      //             borderRadius: BorderRadius.circular(10.r),
-                      //           ),
-                      //           shadows: [
-                      //             BoxShadow(
-                      //               color: const Color(0x0F000000),
-                      //               blurRadius: 12.r,
-                      //               offset: const Offset(0, 6),
-                      //               spreadRadius: 0,
-                      //             )
-                      //           ],
-                      //         ),
-                      //         child: TextFormField(
-                      //           decoration: const InputDecoration(
-                      //             border: InputBorder.none,
-                      //           ),
-                      //         ),
-                      //       ),
-                      //       Container(
-                      //         width: 77.w,
-                      //         height: 110.h,
-                      //         padding: const EdgeInsets.symmetric(
-                      //             horizontal: 10.50, vertical: 10),
-                      //         clipBehavior: Clip.antiAlias,
-                      //         decoration: ShapeDecoration(
-                      //           color: Colors.white,
-                      //           shape: RoundedRectangleBorder(
-                      //             borderRadius: BorderRadius.circular(10.r),
-                      //           ),
-                      //           shadows: [
-                      //             BoxShadow(
-                      //               color: const Color(0x0F000000),
-                      //               blurRadius: 12.r,
-                      //               offset: const Offset(0, 6),
-                      //               spreadRadius: 0,
-                      //             )
-                      //           ],
-                      //         ),
-                      //         child: TextFormField(
-                      //           decoration: const InputDecoration(
-                      //             border: InputBorder.none,
-                      //           ),
-                      //         ),
-                      //       ),
-                      //       Container(
-                      //         width: 77.w,
-                      //         height: 110.h,
-                      //         padding: const EdgeInsets.symmetric(
-                      //             horizontal: 10.50, vertical: 10),
-                      //         clipBehavior: Clip.antiAlias,
-                      //         decoration: ShapeDecoration(
-                      //           color: Colors.white,
-                      //           shape: RoundedRectangleBorder(
-                      //             borderRadius: BorderRadius.circular(10.r),
-                      //           ),
-                      //           shadows: [
-                      //             BoxShadow(
-                      //               color: const Color(0x0F000000),
-                      //               blurRadius: 12.r,
-                      //               offset: const Offset(0, 6),
-                      //               spreadRadius: 0,
-                      //             )
-                      //           ],
-                      //         ),
-                      //         child: TextFormField(
-                      //           decoration: const InputDecoration(
-                      //             border: InputBorder.none,
-                      //           ),
-                      //         ),
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),
                 SizedBox(
                   height: 230.h,
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(AppRouter.createPassword);
-                  },
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.r),
-                      ),
-                    ),
-                    backgroundColor: const MaterialStatePropertyAll(
-                      AppColors.blueColor,
-                    ),
-                  ),
-                  child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 19.h, horizontal: 100.w),
-                    child: Text(
-                      VarificationCodeScreenStrings.varify,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.spMin,
-                        fontWeight: FontWeight.w500,
-                        height: 1.50,
-                      ),
-                    ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppRouter.createPassword);
+                    },
+                    style: elevatedButtonStyles(),
+                    child: const Text(VarificationCodeScreenStrings.varify),
                   ),
                 ),
               ]),

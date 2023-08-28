@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hbk_blanket_app_design/Data/DataSource/Utils/colors.dart';
-
+import 'package:hbk_blanket_app_design/Presentation/Common/textfield_decoration.dart';
 import '../../../../Data/DataSource/AppStrings/reset_password_screen_strings.dart';
 
 class TextFieldForResetPasswordScreen extends StatelessWidget {
@@ -41,32 +40,15 @@ class TextFieldForResetPasswordScreen extends StatelessWidget {
             width: 380.w,
             height: 80.h,
             clipBehavior: Clip.antiAlias,
-            decoration: ShapeDecoration(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(40.r),
-              ),
-              shadows: [
-                BoxShadow(
-                  color: const Color(0x0F000000),
-                  blurRadius: 12.r,
-                  offset: const Offset(0, 6),
-                  spreadRadius: 0,
-                )
-              ],
-            ),
-            child: Center(
-              child: TextFormField(
-                decoration: InputDecoration(
-                    border: InputBorder.none,
-                    prefixIcon: const Icon(Icons.email),
-                    prefixIconColor: AppColors.blueColor,
-                    hintText: ResetPasswordScreenStrings.exampleHint,
-                    hintStyle: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.blueColor,
-                    )),
+            decoration: containerShapeDecorationForTextField(),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              child: Align(
+                alignment: Alignment.center,
+                child: TextFormField(
+                    decoration: inputDecorationForTextField(
+                        prefixIcon: Icons.email,
+                        hintText: "Example@gmail.com")),
               ),
             ),
           ),

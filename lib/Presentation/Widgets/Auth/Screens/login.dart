@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hbk_blanket_app_design/Application/NavigationServices/Router/route.dart';
 import 'package:hbk_blanket_app_design/Data/DataSource/AppStrings/login_screen_strings.dart';
 import 'package:hbk_blanket_app_design/Data/DataSource/AssetsPath/assets_path.dart';
-import 'package:hbk_blanket_app_design/Data/DataSource/Utils/colors.dart';
+import 'package:hbk_blanket_app_design/Presentation/Common/elevated_button_styles.dart';
 import 'package:hbk_blanket_app_design/Presentation/Widgets/Auth/Widgets/login_screen_widgets.dart';
 
 class Login extends StatelessWidget {
@@ -29,9 +29,7 @@ class Login extends StatelessWidget {
                   height: 77.h,
                 ),
                 Text(
-                  // LoginScreenStrings.logintoYourAccountAndGetStarted,
                   LoginScreenStrings.logintoYourAccountAndGetStarted,
-
                   style: TextStyle(
                     fontSize: 19.sp,
                     fontWeight: FontWeight.w400,
@@ -42,27 +40,20 @@ class Login extends StatelessWidget {
                 ),
                 const TextFieldsContainer(),
                 SizedBox(
-                  height: 130.h,
+                  height: 120.h,
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(AppRouter.resetPassword);
-                  },
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.r),
-                      ),
-                    ),
-                    backgroundColor: const MaterialStatePropertyAll(
-                      AppColors.blueColor,
-                    ),
-                  ),
-                  child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 120.w, vertical: 8.h),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppRouter.homeScreen);
+                    },
+                    style: elevatedButtonStyles(),
                     child: const Text(LoginScreenStrings.login),
                   ),
+                ),
+                SizedBox(
+                  height: 10.h,
                 ),
                 Text(
                   LoginScreenStrings.loginAsGuest,

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hbk_blanket_app_design/Data/DataSource/AppStrings/onboarding_screen_strings.dart';
 import 'package:hbk_blanket_app_design/Data/DataSource/AssetsPath/assets_path.dart';
 import 'package:hbk_blanket_app_design/Data/DataSource/Utils/colors.dart';
+import 'package:hbk_blanket_app_design/Presentation/Common/elevated_button_styles.dart';
 
 import '../../../../Application/NavigationServices/Router/route.dart';
 
@@ -59,7 +60,9 @@ class _OnboardingState extends State<Onboarding> {
             Padding(
               padding: const EdgeInsets.all(19.0),
               child: InkWell(
-                onTap: navigateToLoginScreen,
+                onTap: () {
+                  _pageController.jumpToPage(onboardingData.length - 1);
+                },
                 child: currentIndex.value == onboardingData.length - 1
                     ? const SizedBox()
                     : Text(
@@ -98,7 +101,7 @@ class _OnboardingState extends State<Onboarding> {
                   },
                 ),
                 Positioned(
-                  bottom: 60,
+                  bottom: 200.h,
                   width: 350.w,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -131,18 +134,7 @@ class _OnboardingState extends State<Onboarding> {
                         onPressed: value == onboardingData.length - 1
                             ? navigateToLoginScreen
                             : nextPage,
-                        style: ButtonStyle(
-                          minimumSize:
-                              MaterialStateProperty.all(Size(300.w, 60.h)),
-                          shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.r),
-                            ),
-                          ),
-                          backgroundColor: MaterialStateProperty.all(
-                            AppColors.blueColor,
-                          ),
-                        ),
+                        style: elevatedButtonStyles(),
                         child: Text(
                           value == onboardingData.length - 1
                               ? 'Get Started'
