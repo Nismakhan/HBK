@@ -20,4 +20,9 @@ class AssetsPaths {
   static const String simpleBedBlanket = "assets/Images/Simple Bed Blanket.png";
   static const String doubleBedBlanket = "assets/Images/Double bed Blanket.png";
   static const String bedCoverSet = "assets/Images/Bed Cover Set.png";
+  static const String homeIcon = "assets/Images/Home.svg";
+  static const String dashboardIcon = "assets/Images/Activity.svg";
+  static const String productsIcon = "assets/Images/Graph.svg";
+  static const String cartIcon = "assets/Images/Buy.svg";
+  static const String profileIcon = "assets/Images/Profile.svg";
 }
